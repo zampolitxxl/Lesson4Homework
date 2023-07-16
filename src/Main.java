@@ -69,7 +69,9 @@ public class Main {
         int boxWeightOne = firstContainer.fruitBoxWeight();
         System.out.println("Суммарный вес первой коробки  составляет  "+ boxWeightOne);
 
-secondContainer.fruitsMoveTo(thirdContainer);
+        FruitBox.fruitsMoveTo(secondContainer,thirdContainer);
+
+        //(secondContainer, thirdContainer);
 
         System.out.println("Третий контейнер после перемещения  "+ thirdContainer);
 

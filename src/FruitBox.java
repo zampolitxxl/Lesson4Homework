@@ -34,13 +34,13 @@ public class FruitBox<T extends  Fruit> implements Iterable<T>, List<T> {
 
     //метод пересыпания фруктов из коробки в коробку
 
-    public void fruitsMoveTo(FruitBox anotherbox) {
+    public static void fruitsMoveTo(FruitBox box, FruitBox anotherbox) {
 
         //List  source = this.fruits;
         //System.out.println("this.fruits  "+ source );
 
         //List  dest = secondbox;
-        Collections.copy(this.fruits, anotherbox);
+        Collections.copy(box, anotherbox);
         }
 
 
