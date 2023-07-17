@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.stream.Stream;
+
 public class Main {
     public static void main(String[] args) {
 // класть фпукты определенного типа. желаем Т экстендс. Повторяем. Провеяем добавляение разных типов
@@ -68,12 +71,29 @@ public class Main {
 
         int boxWeightOne = firstContainer.fruitBoxWeight();
         System.out.println("Суммарный вес первой коробки  составляет  "+ boxWeightOne);
-
-        FruitBox.fruitsMoveTo(secondContainer,thirdContainer);
+        //Collections.copy(secondContainer, thirdContainer);
 
         //(secondContainer, thirdContainer);
 
-        System.out.println("Третий контейнер после перемещения  "+ thirdContainer);
+        //thirdContainer.fruitsMoveTo(secondContainer);
+
+
+        //проверка чтобы apple в голден эпл не пошел
+
+
+        //System.out.println(" Второй  контейнер после перемещения  "+ secondContainer);
+
+        thirdContainer.fruitsMoveTo(secondContainer);
+
+        System.out.println(" Второй  контейнер после перемещения   "+ secondContainer);
+        System.out.println(" третий  контейнер после перемещения   "+ thirdContainer);
+        System.out.println(" Второй  контейнер после перемещения   "+ secondContainer);
+
+
+
+
+
+
 
 
         // метод пересыпания.
@@ -81,7 +101,7 @@ public class Main {
         // 2. смотрим как копировать один массив в другой и прописываем это в методе
         // 3. смотрим как  1 коробку оставить пустой
 
-        //secondContainer.fruitsMoveTo(thirdContainer);
+
 
 
 

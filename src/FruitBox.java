@@ -1,11 +1,16 @@
 import java.util.*;
 
-public class FruitBox<T extends  Fruit> implements Iterable<T>, List<T> {
+public class FruitBox<T extends  Fruit> implements Iterable<T>, List<T>, Collection<T> {
     private List<T> fruits = new ArrayList<>();
 
     public void addFruit(T fruitToAdd) {
 
         fruits.add(fruitToAdd);
+    }
+
+    public void removeFruit() {
+
+        fruits.clear();
     }
 
     public int fruitBoxWeight() {
@@ -34,14 +39,27 @@ public class FruitBox<T extends  Fruit> implements Iterable<T>, List<T> {
 
     //метод пересыпания фруктов из коробки в коробку
 
-    public static void fruitsMoveTo(FruitBox box, FruitBox anotherbox) {
+    public  void fruitsMoveTo(FruitBox<? super   T> anotherbox) {
 
-        //List  source = this.fruits;
-        //System.out.println("this.fruits  "+ source );
+        for (T num : this) {
+            anotherbox.addFruit(num);
+            //removeFruit(num);
+
+        }
+     this.removeFruit();
+
+        //Iterator var3 = this.iterator();
+
+        //while (var3.hasNext()) {
+             //T next = (T)var3.next();
+            //System.out.println("next значение " + next);
+
+        }
+
 
         //List  dest = secondbox;
-        Collections.copy(box, anotherbox);
-        }
+        //Collections.copy(box, anotherbox);
+
 
 
     //static <T> void copy(FruitBox<? extends Fruit> source, FruitBox<? extends Fruit> target) {
@@ -61,6 +79,8 @@ public class FruitBox<T extends  Fruit> implements Iterable<T>, List<T> {
     public boolean isEmpty() {
         return false;
     }
+
+
 
     @Override
     public boolean contains(Object o) {
